@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('img/Fondo.jpg'); /* Fondo de playa */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Texto blanco */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #ffcc00; /* Amarillo tropical */
+}
+
+h3 {
+    font-size: 1.5em;
+    background: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 50px auto;
+    width: max-content;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.card {
+    width: 120px;
+    height: 120px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-front {
+    background: #ff6600; /* Naranja vibrante */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.card-back {
+    background-image: url('img/stitch.jpg'); /* Imagen trasera de Stitch */
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+}
